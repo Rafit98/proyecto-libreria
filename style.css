@@ -151,7 +151,7 @@ form img {
     padding: 20px;
 }
 
-.infgeneral {
+/* .infgeneral {
     display: flex;
     justify-content: right;
     position: relative;
@@ -160,9 +160,9 @@ form img {
 
 ul {
     list-style: none;
-}
+} */
 
-.piepago {
+/* .piepago {
     display: flex;
     justify-content: left;
     width: 50px;
@@ -176,7 +176,7 @@ ul {
     heder {
         flex-direction: column;
     }
-}
+} */
 
 .container {
     max-width: 1200px;
