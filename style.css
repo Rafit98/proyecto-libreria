@@ -160,9 +160,9 @@ form img {
 
 ul {
     list-style: none;
-}
+} */
 
-.piepago {
+/* .piepago {
     display: flex;
     justify-content: left;
     width: 50px;
@@ -176,7 +176,7 @@ ul {
     heder {
         flex-direction: column;
     }
-}
+} */
 
 .footer {
     border: solid 1px #ffb884;
