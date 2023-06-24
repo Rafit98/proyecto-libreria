@@ -45,7 +45,10 @@ form img {
    margin-right: 10px;
    border-radius: 100px;
 }
-
+.libreria {
+   display: flex;
+   justify-content: center;
+}
 .datos {
    margin: 0px 30px;
    flex-direction: row;
@@ -67,12 +70,52 @@ nav a:hover{
     position: relative;
     top:20px
  }
+ .productos{
+   width: 80%;
+   margin: 20px auto;
+   display: flex;
+   align-items: center; 
+   justify-content: space-between;
+   flex-wrap: wrap;
+ }
+
+
+ .producto-card {
+   box-shadow: 5px 5px 5px #0005;
+   text-align: center;
+   margin: 1rem;
+   transition: all 0.5s;
+ }
+
+ .producto-card:hover{
+   transform: scale(1.1);
+ }
+.producto-card p{
+   display: inline-block;
+
+}
+.producto-precio{
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: center;
+   margin: 1.5rem;
+   font-size: 1.2rem;
+}
+ .producto-card img{
+   width: 300px;
+   height: 300px;
+   align-items: center;
+
+ }
+ 
+ 
+
  .inicio{
-    position: relative;
+    /* position: relative; */
     display: flex;
     justify-content: left;
     top: 120px;
-    margin-left: 50px;
+    margin: 50px;
  }
  .binicio{
     padding: 20px 50px;
