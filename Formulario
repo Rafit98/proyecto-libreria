@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="formulario.css">
+    <link rel="shortcut icon" href="imagenes/COLORES.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <form>
+            <label for="Buscar"> </label>
+            <input type="text" id="Buscar" name="producto" placeholder="Buscar..." />
+            <button>
+                <a href="#"><i class="fas fa-search"></i></a>
+            </button>
+        </form>
+        <a href="http://127.0.0.1:5500/index.html" class="logo">
+
+            <img src="imagenes/COLORES.png" alt="logo">
+        </a>
+        <div class="datos">
+            <a href="" class="nav link">Contacto</a>
+            <a href="" class="nav link">Mi Cuenta</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+
+    </header>
+<div class="registro">
+    <div  id="inicioSesionSection">
+        <div >
+         <h4>Iniciar Sesión</h4>
+        </div>
+         
+         <form id="inicioSesionForm" action="inicio_sesion.php" method="post">
+             <label for="inicioSesionEmail">Correo Electrónico:</label>
+             <input type="email" id="inicioSesionEmail" name="inicioSesionEmail" required>
+             <br><br>
+ 
+             <label for="inicioSesionPassword">Contraseña:</label>
+             <input type="password" id="inicioSesionPassword" name="inicioSesionPassword" required>
+             <br><br>
+ 
+             <input type="submit" value="Iniciar Sesión">
+         </form>
+         <button onclick="toggleForm('registro')">Registrarse</button>
+     </div>
+ 
+     <div id="registroSection" style="display: none;">
+         <div class="sesion">
+             <h4>Registrarse</h4>
+         </div>
+ 
+         <form id="registroForm" action="registro.php" method="post">
+             <label for="registroEmail">Correo Electrónico:</label>
+             <input type="email" id="registroEmail" name="registroEmail" required>
+             <br><br>
+ 
+             <label for="registroPassword">Contraseña:</label>
+             <input type="password" id="registroPassword" name "registroPassword" required>
+             <br><br>
+ 
+             <input type="submit" value="Registrarse">
+         </form>
+         <button onclick="toggleForm('inicioSesion')">Volver a Iniciar Sesión</button>
+     </div>
+</div>
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-links">
+
+                    <div class="social-link">
+                        <h4>Siguenos</h4>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleForm(formType) {
+            if (formType === 'registro') {
+                document.getElementById("registroSection").style.display = "block";
+                document.getElementById("inicioSesionSection").style.display = "none";
+            } else {
+                document.getElementById("registroSection").style.display = "none";
+                document.getElementById("inicioSesionSection").style.display = "block";
+            }
+        }
+
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            var email = document.getElementById("inicioSesionEmail").value;
+            var password = document.getElementById("inicioSesionPassword").value;
+
+            if (!validateEmail(email)) {
+                alert("El correo electrónico no es válido.");
+                event.preventDefault();
+            }
+
+            if (password.length < 6) {
+                alert("La contraseña debe tener al menos 6 caracteres.");
+                event.preventDefault();
+            }
+        });
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+</body>
+
+</html>
